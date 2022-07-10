@@ -1,12 +1,19 @@
 import React from "react";
 
-function Note(prop){
-    return (
+function Note(props) {
+  return (
     <div className="note">
-        <h1>{prop.title}</h1>
-        <p>{prop.content}</p>
+      <h1>{props.title}</h1>
+      <p>{props.content}</p>
+      <button
+        onClick={() => {
+          props.onChecked(props.id);
+        }}
+      >
+        DELETE
+      </button>
     </div>
-    )
+  );
 }
 
 export default Note;
